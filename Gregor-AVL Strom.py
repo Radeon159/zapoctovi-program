@@ -26,7 +26,7 @@ class Head:
 def Vypis(x):
     #K vypsání stromu jsem použil vaši funkci ze cvičení
     if x.root==None:
-        print("prázdný strom")
+        print(None)
     else:
         print(x.root.to_string())
 
@@ -117,12 +117,8 @@ def LeftTurn(x):
     return(y)
 
 def Odstran(x, value):
-    if x.root==None:
-        return("Prázdný strom")
-    elif IsxInS(x.root, value): # nejdříve zjistím zda strom daný vrchol vůbec obsahuje
+    if x.root!=None and IsxInS(x.root, value): # nejdříve zjistím zda strom daný vrchol vůbec obsahuje
         x.root=OdstranS(x.root, value)
-    else:
-        return("strom neobsahuje danou hodnotu")
     
 def OdstranH(x, seznam):
     #slouží pro odstranění velkého množstvího vrcholů
@@ -177,13 +173,13 @@ def OdstranS(x, value):
 #Odstranění minima a maxima
 def OdstranMax(x):
     if x.root==None:
-        return("prázdný strom")
+        return(None)
     M=MaximumS(x.root)
     x.root=OdstranS(x.root, M)
 
 def OdstranMin(x):
     if x.root==None:
-        return("prázdný strom")
+        return(None)
     m=MinimumS(x.root)
     x.root=OdstranS(x.root, m)
 
@@ -205,7 +201,7 @@ def IsAVLS(x):
 #Hledá nejvetší hodnotu ve stromu
 def Max(x):
     if x.root==None:
-        return("prázdný strom")
+        return(None)
     else:
         return(MaximumS(x.root))
 
@@ -217,7 +213,7 @@ def MaximumS(x):
 #Hledá nejmenší hodnotu ve stromu
 def Min(x):
     if x.root==None:
-        return("prázdný strom")
+        return(None)
     else:
         return(MinimumS(x.root))
 
@@ -229,7 +225,7 @@ def MinimumS(x):
 #Hledá zda se nachází daná hodntota ve stromě
 def IsxIn(x, value):
     if x.root==None:
-        return("prázdný strom")
+        return(None)
     else:
         return(IsxInS(x.root, value))
 
@@ -249,6 +245,11 @@ def IsxInS(x, hodnota):
     else:
         return(True)
 
-
-
-K=Head() #vytvořím prázdný strom
+def Test():
+    K=Head() 
+    PridejH(K, "1 5 10 8 25 41 23 24 45 54 -2 0")
+    Vypis(K)
+    OdstranMin(K)
+    OdstranMax(K)
+    print(Min(K))
+    PridejaVypis(K, 12)
