@@ -1,11 +1,12 @@
 # Jak kód využít
-## Instalace pythonu
-
+## Zpuštění kódu
+Pro zpuštění kódu potřebujete nainstelovat python. K tomu použijte odkaz na webu https://www.python.org/downloads/. Poté s pomocí python idle otevřte tento program.
 ## Využití kódu
 Kód lze využít na ukládání dat, ve fromátu tak, aby se v něm dalo rychle vyhledávat, i při velkém množství dat. 
+Například pokud sbíráte velké množství dat, a chcete vědět nejvyšší hodnotu která se vyskytla.
 # Funkce programu
 ## Jak Strom funguje?
-Pokud chceme zavolat funkci na strom, musíme volat jeho "hlavu", která pak ukazuje na kořen stromu, kořen se může měnit, proto pro označení stromu používám hlavu. Po zavolání libovolné funkce, která změní počet uzlů ve stromě, se strom sám automaticky opraví tak aby byl částečně vyvážený. Nový strom vytvoříte příkazem _hlava=Head()_.
+Nejdříve vytvoříte nový strom pomocí funkce _hlava=Head()_, kde __hlava__ je méno daného stromu__.Poté na strom můžete volat potřebné funkce. Halava ukazuje na kořen stromu, kořen se může měnit, proto pro označení stromu používám hlavu. Po zavolání libovolné funkce, která změní počet uzlů ve stromě, se strom sám automaticky opraví tak aby byl částečně vyvážený, to zajištuje rychlost operací.
 ## Vkládání do Stromu
 ### Vložení uzlu
 Pro přidání uzlu s hodnotou __value__ do stromu použijte funkci _Pridej(hlava, value)_. 
@@ -15,7 +16,7 @@ Pokud chcete vložit více uzlů současně můžete použít funkci _PridejH(hl
 ### Maxima, minima
 Pro nalezení maxima/minima použijeme respektivní funkce _Max(hlava)/Min(hlava)_.
 ### Obsahuje daný strom hodnotu?
-okud chceme vědět zda daný stom obsahuje specifickou hodnotu mmůžeme použít funkci _IsxIn(hlava)_. Funkce vrací hodnoty __True/False__.
+Pokud chctee vědět zda daný stom obsahuje specifickou hodnotu mmůžeme použít funkci _IsxIn(hlava)_. Funkce vrací hodnoty __True/False__.
 ## Odstranováí ze stromu
 ### Odstranění uzlu
 Funkce _Odstran(Head, value)_ odstraní uzel s __value__ ze stromu, pokud strom danou funkc obsahuje.
